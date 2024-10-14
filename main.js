@@ -21,10 +21,10 @@ function enviar() {
 
 let num = Math.random() * 100;
 let arendondar = Math.floor(num);
-let resul = '';
 let l = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ,.!abcdefghijklmnopqrstuvwxyz';
 
 function ale() {
+    let resul = '';
 
     for( let i = 0; i < num; i++) {
         const indAle = Math.random() * l.length
