@@ -26,13 +26,38 @@ header {
     padding: 10px;
 }
 
+#content-pri {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#content-aside {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+#perg {
+    background-color: lightgrey;
+    color: black;
+    margin-top: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#sidebar {
+    background-color: black;
+    color: white;
+    flex-grow: 1;
+}
+
 main {
     font-family: Arial, Helvetica, sans-serif;
 
     background-color: rgb(214, 214, 214);
     
     width: 60vw;
-    height: 93%;
+    height: 93vh;
     
     margin: auto;
     border-radius: 10px;

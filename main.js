@@ -1,7 +1,6 @@
+let inp = document.getElementById('userInput');
+
 function enviar() {
-
-
-    let inp = document.getElementById('userInput');
     let inpu = String(inp.value);
 
     let res = document.getElementById('span2');
@@ -15,7 +14,14 @@ function enviar() {
         per.innerHTML = inpu;
 
         res.style.alignItems = 'flex-start'
-        res.innerHTML = ale();
+
+        if (res.length > 10 ) {
+            let parte1 = res.slice(0, 67);
+            let parte2 = res.slice(67);
+            res.innerHTML += parte1 + '<br>' + parte2;
+        } else {
+            res.innerHTML = ale();
+        }
     }
 }
 
@@ -34,6 +40,10 @@ function ale() {
     }
 
     return resul;
+}
+
+function ant() {
+    
 }
 
  /* T t y */

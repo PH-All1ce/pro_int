@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    </style>
+
+</head>
+<body>
+    <div>
+        <p>phzin</p>
+    </div>
+    <span id="res">
+
+    </span>
+    <input type="text" name="" id="inp">
+    <button id="b" onclick="mos()">Enviar</button>
+
+    <script>
+        function mos() {
+            let peg = document.getElementById('res');
+            let perg = document.getElementById('inp');
+            let pergun = String(perg.value);
+
+            peg.innerHTML = pergun;
+
+            if (pergun.length > 2) {
+                let parte1 = pergun.slice(0, 2);
+                let parte2 = pergun.slice(2);
+                peg.innerHTML = parte1 + '<br>' + parte2;
+            } else {
+                peg.innerHTML = pergun;
+            }
+        }
+    </script>
+</body>
+</html>
