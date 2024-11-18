@@ -1,20 +1,24 @@
-let num = Math.random() * 100;
-let arendondar = Math.floor(num);
-let resul = '';
-let l = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ,.!abcdefghijklmnopqrstuvwxyz';
+// Seleciona os elementos necessários
+const userQuestionInput = document.getElementById('userQuestion');
+const historyList = document.getElementById('historyList');
 
-function ale() {
+// Função para adicionar a pergunta ao histórico
+function addQuestion() {
+    const question = userQuestionInput.value.trim(); // Obtém o valor do input e remove espaços extras
 
-    console.log(arendondar);
-
-    for( let i = 0; i < num; i++) {
-        const indAle = Math.random() * l.length
-        const ind = Math.floor(indAle);
-
-        resul += l[ind];
+    // Verifica se a pergunta não está vazia
+    if (question === '') {
+        alert('Por favor, digite uma pergunta!');
+        return;
     }
 
-    console.log(resul);
-    console.log(resul.length);
+    // Cria um novo item da lista
+    const listItem = document.createElement('li');
+    listItem.textContent = question;
+
+    // Adiciona o item ao histórico
+    historyList.appendChild(listItem);
+
+    // Limpa o campo de input
+    userQuestionInput.value = '';
 }
-ale()

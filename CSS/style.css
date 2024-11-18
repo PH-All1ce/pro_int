@@ -32,10 +32,7 @@ header {
 }
 
 #content-aside {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-left: 100px;
+    display: none;
 }
 
 #perg {
@@ -49,6 +46,14 @@ header {
     background-color: black;
     color: white;
     flex-grow: 1;
+    max-width: 220px;
+}
+
+#list-ques {
+    list-style: square;
+    color: white;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 main {
@@ -67,16 +72,22 @@ main {
 }
 
 #section1 {
-    width: 100%;
+    max-width: 820px;
     height: 90%;
+
+    word-wrap: break-word;
+    word-break: break-word;
 
     padding: 10px;
     gap: 10px;
 }
 
 #section1 > div {
-    width: 100%;
+    max-width: 820px;
     height: 50%;
+
+    word-wrap: break-word;
+    word-break: break-word;
 
     display: flex;
     flex-direction: column;

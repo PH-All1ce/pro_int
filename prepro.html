@@ -4,37 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
+        #minhaDiv {
+            width: 400px;        /* Largura fixa para a div */
+            height: auto;        /* A altura ajusta-se automaticamente */
+            background-color: lightgray;
+            padding: 10px;
+            
+            /* Quebra o texto automaticamente */
+            word-wrap: break-word;  /* ou overflow-wrap: break-word */
+            word-break: break-word; /* Garante que palavras longas também quebrem */
+        }
+    
+        #minhaDiv p {
+                margin: 0;  /* Remove margens desnecessárias */
+            }
     </style>
+    
 
 </head>
 <body>
-    <div>
-        <p>phzin</p>
-    </div>
-    <span id="res">
-
-    </span>
-    <input type="text" name="" id="inp">
-    <button id="b" onclick="mos()">Enviar</button>
-
-    <script>
-        function mos() {
-            let peg = document.getElementById('res');
-            let perg = document.getElementById('inp');
-            let pergun = String(perg.value);
-
-            peg.innerHTML = pergun;
-
-            if (pergun.length > 2) {
-                let parte1 = pergun.slice(0, 2);
-                let parte2 = pergun.slice(2);
-                peg.innerHTML = parte1 + '<br>' + parte2;
-            } else {
-                peg.innerHTML = pergun;
-            }
-        }
-    </script>
+    <div id="minhaDiv">
+        <p>Este é um texto longo que vai se ajustar automaticamente ao tamanho da div. Mesmo que o texto seja muito longo, ele será quebrado para que não ultrapasse os limites da div.</p>
+    </div>    
 </body>
 </html>
