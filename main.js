@@ -1,6 +1,7 @@
 let inp = document.getElementById('userInput');
 let aside = document.getElementById('content-aside');
 let priperg = false;
+let perguntasRespostas = [];
 
 function enviar() {
     let inpu = String(inp.value);
@@ -24,28 +25,28 @@ function enviar() {
         let per = document.getElementById('span1');
         per.innerHTML = question;
 
+        const respostaAleatoria = ale();
+        res.innerHTML = respostaAleatoria;
+
+        perguntasRespostas.push({ pergunta: question, resposta: respostaAleatoria});
+
         const listItem = document.createElement('li');
         listItem.textContent = question;
+        listItem.addEventListener( 'click', function() {
+            exibirPerguntaAnterior(perguntasRespostas.length - 1);
+        });
+        listItem.style.cursor = 'pointer';
+        listItem.style.marginLeft = '20px';
 
         list.appendChild(listItem);
 
         res.style.alignItems = 'flex-start'
-
-        if (res.length > 10 ) {
-            let parte1 = res.slice(0, 67);
-            let parte2 = res.slice(67);
-            res.innerHTML += parte1 + '<br>' + parte2;
-        } else {
-            res.innerHTML = ale();
-        }
     }
 }
 
-let num = Math.random() * 100;
-let arendondar = Math.floor(num);
-let l = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ,.!abcdefghijklmnopqrstuvwxyz';
-
 function ale() {
+    let num = Math.floor(Math.random() * 100) + 10;
+    let l = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ,.!abcdefghijklmnopqrstuvwxyz';
     let resul = '';
 
     for( let i = 0; i < num; i++) {
@@ -58,7 +59,13 @@ function ale() {
     return resul;
 }
 
-function ant() {
-    
+function exibirPerguntaAnterior(index) {
+    if (index >= 0 && index < perguntasRespostas.length) {
+        const pergunta = perguntasRespostas[index].pergunta;
+        const resposta = perguntasRespostas[index].resposta;
+
+        document.getElementById('span1').innerHTML = pergunta;
+        document.getElementById('span2').innerHTML = resposta;
+    }
 }
  /* T t y */
