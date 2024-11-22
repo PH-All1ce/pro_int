@@ -33,6 +33,7 @@ header {
 
 #content-aside {
     display: none;
+    background-color: red;
 }
 
 #perg {
@@ -152,6 +153,10 @@ main {
 }
 
 @media (max-width: 480px) {
+    body {
+        background-color: yellow;
+    }
+
     main {
         width: 85%;
     }

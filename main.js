@@ -32,9 +32,13 @@ function enviar() {
 
         const listItem = document.createElement('li');
         listItem.textContent = question;
-        listItem.addEventListener( 'click', function() {
-            exibirPerguntaAnterior(perguntasRespostas.length - 1);
-        });
+        listItem.dataset.index = perguntasRespostas.length - 1;
+        listItem.addEventListener('click', function() {
+            const index = this.dataset.index;
+            exibirPerguntaAnterior(Number(index));
+        }) 
+        
+
         listItem.style.cursor = 'pointer';
         listItem.style.marginLeft = '20px';
 
