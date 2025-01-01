@@ -8,21 +8,33 @@
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 
-<body>
-    <header>
+<body id="fundo">
+    <header id="cab">
         <h1>Prototipo do site</h1>
     </header>
 
-    <div id="content-pri">
+    <button id="dark" onclick="dark()">
+        Dark Mode
+    </button>
+
+    <button id="norm" onclick="norm()">
+        Normal Mode
+    </button>
+
+
+    <main>
+
         <aside id="content-aside">
             <h2 id="perg">Perguntas anteriores</h2>
             <div id="sidebar">
-                <ul id="list-ques"></ul>
+                <ul id="list-ques" style="list-style: circle; word-wrap: break-word;
+                word-break: break-word;"></ul>
             </div>
         </aside>
-        <main>
+
+        <div id="corpo">
             <section id="section1">
-                <div>
+                <div style="margin-bottom: 10px;">
                     <span id="span1">
                         Se input, texto exibido a direita
                     </span>
@@ -33,14 +45,19 @@
                     </span>
                 </div>
             </section>
-        
             <section id="inputArea">
                 <input type="text" id="userInput" placeholder="Message question">
                 <button id="sendInput" onclick="enviar()">Enviar</button>
             </section>
-        
-        </main>
-    </div>
+        </div>
+    
+    </main>
+
+    <footer>
+        <p>
+            <abbr title="Pedro Henrique">PH</abbr>, <abbr title="Douglas Paulino">Douglas</abbr>, <abbr title="Gusta das Pizzas">Gustavo</abbr>, <abbr title="Luis Edson">Leda</abbr> e <abbr title="Erick Soares">Erick</abbr>
+        </p>
+    </footer>
 
     <script src="main.js"></script>
 </body>

@@ -13,13 +13,6 @@ function enviar() {
     if( question === '') {
         alert('Informe uma pergunta campeão.')
     } else {
-        if (!priperg) {
-            aside.style.display = 'flex';
-            aside.style.flexWrap = 'wrap';
-            aside.style.flexDirection = 'column';
-            aside.style.marginLeft = '100px';
-            priperg = true;
-        }
         inp.value = '';
 
         let per = document.getElementById('span1');
@@ -46,6 +39,16 @@ function enviar() {
 
         res.style.alignItems = 'flex-start'
     }
+}
+
+function dark() {
+    let dark = document.getElementById('fundo');
+    dark.style.backgroundImage = 'linear-Gradient(to right, #000A32, #092262, #7D51A0, #BE69AA)';
+}
+
+function norm() {
+    let norm = document.getElementById('fundo');
+    norm.style.backgroundImage = 'linear-Gradient(to right, #035e8c, #075e90, #016b9c, #01456d, #082838)';
 }
 
 function ale() {
